@@ -1,4 +1,4 @@
-runtime: python3
+runtime: python37
 
 # the following codes was commented out since they will incur charges, 
 # if you want to try the face detection function, please use those codes
