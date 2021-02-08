@@ -12,7 +12,7 @@ from google.cloud import storage
 from google.cloud import vision
 
 
-CLOUD_STORAGE_BUCKET = os.environ.get("CLOUD_STORAGE_BUCKET")
+#CLOUD_STORAGE_BUCKET = os.environ.get("CLOUD_STORAGE_BUCKET")
 
 
 app = Flask(__name__)
@@ -55,6 +55,10 @@ def wikipedia_route(company):
     entities = client.analyze_entities(request = {'document': document, 'encoding_type': encoding_type}).entities
     return str(entities)
 
+# the following codes was commented out since they will incur charges, 
+# if you want to try the face detection function, please use those codes
+
+"""
 @app.route("/face")
 def homepage():
     # Create a Cloud Datastore client.
@@ -141,6 +145,7 @@ def upload_photo():
     # Redirect to the home page.
     return redirect("/face")
 
+"""
 
 @app.errorhandler(500)
 def server_error(e):
